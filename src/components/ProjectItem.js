@@ -1,12 +1,18 @@
 import React from "react";
 
 function ProjectItem({ name, about, technologies }) {
-  return (
+
+console.log(technologies, "technologies prop passed down to projectitem")
+
+
+return (
     <div className="project-item">
       <h3>{name}</h3>
       <p>{about}</p>
       <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
+        {technologies.map((technologies, index)=> {
+          return <span key={index}>{technologies}</span>
+        })}
       </div>
     </div>
   );
